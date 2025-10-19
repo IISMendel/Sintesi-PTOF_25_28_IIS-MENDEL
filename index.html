@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sintesi del PTOF - IIS Mendel (Versione Migliorata)</title>
+    <title>Sintesi del PTOF - IIS Mendel (Versione Corretta)</title>
     <script src="https://cdn-tailwindcss.vercel.app/"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,6 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* Sfondo più sobrio ma sempre colorato e dinamico */
             background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
             background-size: 200% 200%;
             animation: gradientShift 20s ease infinite;
@@ -28,16 +27,14 @@
             max-width: 1200px;
         }
         
-        /* Titolo con testo solido per massima leggibilità */
         header h1 {
-            color: #3b4b8f; /* Un blu-viola scuro e professionale */
+            color: #3b4b8f;
             font-weight: 800;
             letter-spacing: -1px;
             text-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
         main {
-            /* Effetto "vetro smerigliato" più sottile */
             backdrop-filter: blur(16px);
             background: rgba(255, 255, 255, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.4);
@@ -50,19 +47,18 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* Navigazione Tab più pulita e reattiva */
         .tabs-container {
             border-bottom: 2px solid #e5e7eb;
-            padding: 0.5rem 0;
+            padding: 0 1rem; /* Aggiunto padding laterale per lo spazio */
         }
         nav {
             display: flex;
-            overflow-x: auto; /* Abilita lo scroll orizzontale su mobile */
+            overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Nasconde la scrollbar in Firefox */
+            scrollbar-width: none;
         }
         nav::-webkit-scrollbar {
-            display: none; /* Nasconde la scrollbar in Chrome/Safari */
+            display: none;
         }
         
         .tab-button {
@@ -73,9 +69,10 @@
             transition: all 0.3s ease;
             padding: 1rem 1.5rem;
             font-weight: 600;
-            color: #4b5563; /* Grigio scuro */
-            white-space: nowrap; /* Evita che il testo vada a capo */
-            flex-shrink: 0; /* Impedisce ai bottoni di rimpicciolirsi */
+            color: #4b5563;
+            white-space: nowrap;
+            flex-shrink: 0;
+            cursor: pointer;
         }
 
         .tab-button:hover {
@@ -96,7 +93,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Stile del contenuto migliorato */
         .prose h2 {
             color: #3b4b8f;
             padding-bottom: 0.5rem;
@@ -118,7 +114,6 @@
         }
         
         .interactive-list li::before {
-            /* Icona SVG per un look più pulito dell'emoji */
             content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23764ba2' viewBox='0 0 256 256'%3E%3Cpath d='M225.91,73.28l-80-56a16,16,0,0,0-15.82,0l-80,56A16,16,0,0,0,40,86.22V176a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V86.22A16,16,0,0,0,225.91,73.28ZM128,32l80,56-80,32L48,88Z'%3E%3C/path%3E%3C/svg%3E");
             position: absolute;
             left: 8px;
@@ -173,25 +168,24 @@
                     <button class="tab-button" data-tab="tab_inclusione">Inclusione</button>
                     <button class="tab-button" data-tab="tab4">Organizzazione</button>
                     <button class="tab-button" data-tab="tab5">Valutazione</button>
-                    <button class="tab-button" data-tab="tab_grafici">Grafici</button>
+                    <button class="tab-button" data-tab="tab_grafici">Dati e Grafici</button>
                     <button class="tab-button" data-tab="tab_contatti">Contatti</button>
                     <button class="tab-button" data-tab="tab6">Link Utili</button>
                 </nav>
             </div>
             
             <div class="p-6 sm:p-8">
-                <!-- Contenuto Tab (uguale alla versione precedente, ma ho aggiunto i Contatti e i Grafici) -->
                 <!-- Tab 1: La Scuola e il Contesto -->
                 <div id="tab1" class="tab-content active">
                     <article class="prose max-w-none prose-lg">
                         <h2 class="text-2xl font-bold mb-4">La Nostra Identità e il Contesto Territoriale</h2>
-                        <p>L'Istituto Mendel, situato a Villa Cortese, nasce dalla storica Fondazione Scuola di Agricoltura Ferrazzi e Cova. La sua missione, voluta dal fondatore Francesco Ferrazzi, è sempre stata quella di promuovere l'insegnamento tecnico-pratico nel settore agricolo. Evolutosi nel tempo, l'istituto ha ampliato la sua offerta formativa includendo corsi di Istruzione e Formazione Professionale (IeFP) e percorsi serali per adulti, mantenendo una proficua collaborazione con la Fondazione.</p>
+                        <p>L'Istituto Mendel, situato a Villa Cortese, affonda le sue radici nella storica Fondazione Scuola di Agricoltura Ferrazzi e Cova. La sua missione originaria, voluta dal fondatore Francesco Ferrazzi, è sempre stata quella di promuovere l'insegnamento tecnico-pratico nel settore agricolo. Nel tempo, l'istituto ha ampliato la sua offerta formativa includendo corsi di Istruzione e Formazione Professionale (IeFP) e percorsi serali per adulti, mantenendo una proficua e continua collaborazione con la Fondazione.</p>
                         <h3>Punti Chiave del Contesto:</h3>
                         <ul class="interactive-list">
-                            <li><strong>Analisi del territorio:</strong> L'istituto opera in un'area a vocazione industriale, ma con una forte tradizione agricola. Collabora con consorzi, parchi e associazioni di categoria, oltre a numerose aziende medio-piccole (florovivaistiche, zootecniche, agroalimentari).</li>
-                            <li><strong>Popolazione scolastica:</strong> Per l'a.s. 2024/2025, l'istituto conta 600 studenti suddivisi in 36 classi.</li>
-                            <li><strong>Risorse della scuola:</strong> La struttura comprende due edifici con aule dotate di Digital Board, laboratori specializzati, aule TEAL, una palestra, una serra produttiva e accesso all'azienda agricola San Grato per le esercitazioni.</li>
-                            <li><strong>Risorse professionali:</strong> L'organico è composto da 128 docenti e personale ATA qualificato, con un'alta percentuale di stabilità del corpo docente.</li>
+                            <li><strong>Analisi del territorio:</strong> L'istituto opera in un'area a vocazione industriale ma con una forte tradizione agricola, collaborando con consorzi, parchi e numerose aziende (florovivaistiche, zootecniche, agroalimentari) delle province di Milano, Varese, Como e Novara.</li>
+                            <li><strong>Popolazione scolastica:</strong> Per l'a.s. 2024/2025, l'istituto conta <strong>600 studenti</strong> suddivisi in 36 classi.</li>
+                            <li><strong>Infrastrutture e Risorse:</strong> La struttura comprende due edifici con 32 aule dotate di Digital Board, laboratori specializzati (informatica, chimica, biologia, meristematica, trasformazione prodotti), 2 aule TEAL (Technology Enhanced Active Learning), una palestra, una serra produttiva di 900mq e accesso diretto all'azienda agricola San Grato (250 ha) per le esercitazioni pratiche.</li>
+                            <li><strong>Risorse professionali:</strong> L'organico è composto da 128 docenti (di cui il 73% di ruolo da più di 5 anni, garantendo continuità didattica) e 30 unità di personale ATA, inclusi assistenti tecnici e addetti all'azienda agraria.</li>
                         </ul>
                     </article>
                 </div>
@@ -200,19 +194,19 @@
                 <div id="tab2" class="tab-content">
                     <article class="prose max-w-none prose-lg">
                         <h2 class="text-2xl font-bold mb-4">Vision, Priorità e Piano di Miglioramento</h2>
-                        <p>L'Istituto Mendel si propone di formare periti agrari pronti ad affrontare le sfide della sostenibilità ambientale e del cambiamento economico-sociale. La vision è quella di preparare tecnici con competenze in agricoltura 4.0, capaci di aggiornarsi costantemente e spendibili nel mercato globale.</p>
+                        <p>La vision dell'Istituto Mendel è formare tecnici agrari pronti ad affrontare le sfide della sostenibilità ambientale e del cambiamento economico-sociale, con competenze avanzate in agricoltura conservativa, di precisione e 4.0. L'obiettivo è preparare figure professionali capaci di aggiornarsi costantemente e spendibili in un mercato globale, grazie anche a progetti innovativi come <strong>"Mendel 4.0"</strong>, che introduce sensoristica, mappatura GPS e intelligenza artificiale nella difesa fitosanitaria.</p>
                         <h3>Priorità Strategiche e Traguardi:</h3>
                         <ol class="interactive-list">
                             <li><strong>Miglioramento esiti INVALSI:</strong> Raggiungere la media nazionale nei risultati di inglese nelle classi quinte.</li>
-                            <li><strong>Competenze chiave europee:</strong> Promuovere il rispetto delle regole, dei beni comuni e dell'ambiente.</li>
-                            <li><strong>Successo post-diploma:</strong> Favorire un maggior successo negli studi universitari.</li>
+                            <li><strong>Competenze chiave europee:</strong> Promuovere il rispetto delle regole, dei beni comuni e dell'ambiente, rendendoli temi qualificanti del curriculum.</li>
+                            <li><strong>Successo post-diploma:</strong> Favorire un maggior successo negli studi universitari, puntando a far sì che almeno il 70% degli iscritti consegua più della metà dei crediti previsti al primo anno.</li>
                         </ol>
                         <h3>Piano di Miglioramento:</h3>
                          <ul class="interactive-list">
-                            <li><strong>Offerta Formativa:</strong> Integrare le programmazioni con le nuove dotazioni tecnologiche e promuovere la formazione docenti.</li>
-                            <li><strong>Contrasto alla dispersione:</strong> Attivare interventi sulle fragilità e difficoltà di apprendimento.</li>
-                            <li><strong>Sostenibilità e Cittadinanza:</strong> Realizzare progetti sulla raccolta differenziata e le competenze civiche.</li>
-                            <li><strong>Comunicazione:</strong> Rinnovare il sito web e migliorare la visibilità della scuola sul territorio.</li>
+                            <li><strong>Offerta Formativa:</strong> Integrare le programmazioni con le nuove dotazioni tecnologiche (Agricoltura 4.0) e promuovere la formazione docenti su CLIL e didattica digitale.</li>
+                            <li><strong>Contrasto alla dispersione:</strong> Attivare interventi mirati sulle fragilità e creare un team dedicato alla prevenzione dell'abbandono scolastico.</li>
+                            <li><strong>Sostenibilità e Cittadinanza:</strong> Realizzare progetti concreti per la raccolta differenziata e integrare le competenze di cittadinanza nella valutazione della condotta.</li>
+                            <li><strong>Comunicazione:</strong> Rinnovare il sito web secondo le linee guida PNRR e migliorare la visibilità della scuola sul territorio.</li>
                         </ul>
                     </article>
                 </div>
@@ -221,17 +215,17 @@
                 <div id="tab3" class="tab-content">
                      <article class="prose max-w-none prose-lg">
                         <h2 class="text-2xl font-bold mb-4">Indirizzi di Studio e Attività Curricolari</h2>
-                        <p>L'offerta formativa è ampia e diversificata per rispondere alle diverse esigenze degli studenti, sia giovani che adulti.</p>
+                        <p>L'offerta formativa è ampia e strutturata per rispondere alle diverse esigenze degli studenti, sia giovani che adulti, combinando una solida base teorica con un'intensa attività pratica.</p>
                         <h3>Indirizzi di Studio:</h3>
                         <ul class="interactive-list">
-                            <li><strong>Istituto Tecnico (Diurno e Serale):</strong> Settore Tecnologico "Agraria, Agroalimentare, Agroindustria" con articolazioni in "Produzioni e Trasformazioni" (PT) e "Gestione dell'Ambiente e del Territorio" (GAT).</li>
-                            <li><strong>Istruzione e Formazione Professionale (IeFP) e Istituto Professionale (Diurno e Serale):</strong> Percorsi triennali per la qualifica di Operatore Agricolo, con possibilità di un IV anno per il diploma di Tecnico Agricolo e un V anno per la maturità professionale.</li>
+                            <li><strong>Istituto Tecnico (Diurno e Serale):</strong> Settore Tecnologico "Agraria, Agroalimentare, Agroindustria" con due articolazioni a scelta dal terzo anno: <strong>"Produzioni e Trasformazioni" (PT)</strong>, per approfondire le produzioni animali/vegetali e la biotecnologia, e <strong>"Gestione dell'Ambiente e del Territorio" (GAT)</strong>, focalizzata su conservazione, estimo e genio rurale.</li>
+                            <li><strong>Istruzione e Formazione Professionale (IeFP) e Istituto Professionale (Diurno e Serale):</strong> Percorso completo che parte con una qualifica triennale di <strong>Operatore Agricolo</strong>, prosegue con un IV anno per il diploma di <strong>Tecnico Agricolo</strong> e si conclude con un V anno per la maturità e il diploma di <strong>Agrotecnico</strong>, che consente l'accesso all'università.</li>
                         </ul>
                          <h3>Attività Curricolari Chiave:</h3>
                         <ul class="interactive-list">
-                           <li><strong>FORMAZIONE SCUOLA-LAVORO (ex Alternanza):</strong> Percorsi obbligatori per il triennio, che includono attività nell'azienda S. Grato, stage estivi, partecipazione a convegni e visite aziendali.</li>
-                           <li><strong>Educazione Civica:</strong> Insegnamento trasversale di 33 ore annue, con un curricolo focalizzato su Costituzione, Sviluppo Sostenibile e Cittadinanza Digitale.</li>
-                           <li><strong>Uscite didattiche e Viaggi d'istruzione:</strong> Attività finalizzate ad arricchire i contenuti dei piani di studio.</li>
+                           <li><strong>FORMAZIONE SCUOLA-LAVORO (ex Alternanza):</strong> Percorsi obbligatori nel triennio (minimo 150 ore per il tecnico, 470+ ore per IeFP), che includono attività pratiche nell'azienda S. Grato, stage estivi in aziende convenzionate, partecipazione a convegni e visite aziendali.</li>
+                           <li><strong>Educazione Civica:</strong> Insegnamento trasversale di 33 ore annue, con un curricolo d'istituto che contestualizza i tre nuclei tematici (Costituzione, Sostenibilità, Cittadinanza Digitale) all'interno dell'indirizzo agrario.</li>
+                           <li><strong>Uscite didattiche e Viaggi d'istruzione:</strong> Attività curricolari finalizzate ad arricchire i piani di studio, con visite a siti di produzione, fiere di settore e luoghi di interesse culturale e paesaggistico.</li>
                         </ul>
                     </article>
                 </div>
@@ -240,15 +234,19 @@
                 <div id="tab_progetti" class="tab-content">
                     <article class="prose max-w-none prose-lg">
                         <h2 class="text-2xl font-bold mb-4">Progetti di Ampliamento dell'Offerta Formativa</h2>
-                        <p>L'istituto offre numerose iniziative per arricchire il percorso formativo degli studenti e sviluppare una cittadinanza attiva.</p>
-                        <h3>Alcuni Progetti Significativi:</h3>
+                        <p>L'istituto offre un'ampia gamma di iniziative curricolari ed extracurricolari per arricchire il percorso formativo degli studenti, promuovere il successo scolastico e sviluppare una cittadinanza attiva e consapevole.</p>
+                        <h3>Elenco dei Progetti Principali:</h3>
                         <ul class="interactive-list">
-                            <li><strong>Apimania:</strong> Un corso teorico-pratico per conoscere i fondamenti dell'apicoltura.</li>
-                            <li><strong>Dal Giardino delle Piante Aromatiche:</strong> Laboratorio per la coltivazione e trasformazione di piante aromatiche.</li>
-                             <li><strong>Gelsi-bachicoltura SerlBioTech:</strong> Progetto per riscoprire l'allevamento del baco da seta.</li>
-                            <li><strong>Cultura della Legalità:</strong> Incontri sull'uso consapevole dei social network in collaborazione con le forze dell'ordine.</li>
-                            <li><strong>Progetti FAI e WWF:</strong> Collaborazioni per l'educazione al patrimonio e alla sostenibilità.</li>
-                            <li><strong>Gruppo Sportivo Scolastico:</strong> Per svolgere attività sportiva e partecipare a tornei studenteschi.</li>
+                            <li><strong>Apimania:</strong> Corso teorico-pratico per conoscere i fondamenti dell'apicoltura e le tecniche di allevamento.</li>
+                            <li><strong>Dal Giardino delle Piante Aromatiche:</strong> Laboratorio per la coltivazione e trasformazione di piante aromatiche in oli essenziali e prodotti erboristici.</li>
+                            <li><strong>Gelsi-bachicoltura SerlBioTech:</strong> Progetto per riscoprire e valorizzare l'allevamento del baco da seta.</li>
+                            <li><strong>Santuario in Fiore:</strong> Collaborazione con Legambiente per allestire e valorizzare con le produzioni della scuola un santuario del '500.</li>
+                            <li><strong>Cultura della Legalità:</strong> Incontri sull'uso consapevole di cellulari e social network in collaborazione con le forze dell'ordine.</li>
+                            <li><strong>Progetti FAI e WWF:</strong> Collaborazioni per l'educazione al patrimonio (Apprendisti Ciceroni) e alla sostenibilità ambientale (Citizen Science).</li>
+                            <li><strong>Gruppo Sportivo Scolastico:</strong> Per svolgere gratuitamente attività sportiva e partecipare a tornei studenteschi.</li>
+                             <li><strong>GIS (Gruppo Interesse Scala):</strong> Per assistere a opere e balletti al Teatro alla Scala di Milano.</li>
+                            <li><strong>AVIS a Scuola:</strong> Incontri di sensibilizzazione sull'importanza della donazione di sangue.</li>
+                             <li><strong>Creatività e Cultura:</strong> Laboratori di teatro e concorsi di poesia e fotografia per valorizzare le potenzialità creative ed espressive.</li>
                         </ul>
                     </article>
                 </div>
@@ -257,12 +255,12 @@
                 <div id="tab_internazionalizzazione" class="tab-content">
                     <article class="prose max-w-none prose-lg">
                         <h2 class="text-2xl font-bold mb-4">Progetti di Internazionalizzazione</h2>
-                        <p>La scuola promuove l'apertura culturale e il potenziamento delle competenze linguistiche.</p>
+                        <p>La scuola promuove attivamente l'apertura culturale e il potenziamento delle competenze linguistiche attraverso esperienze dirette all'estero e collaborazioni internazionali di alto profilo.</p>
                         <h3>Iniziative Principali:</h3>
                         <ul class="interactive-list">
-                            <li><strong>Stage Linguistici all'estero:</strong> Soggiorni-studio di una settimana in Irlanda o Inghilterra per gli studenti del triennio.</li>
-                            <li><strong>Progetto UTAH:</strong> Scambio di buone pratiche didattiche con l'ateneo americano "Utah State University" su discipline STEM.</li>
-                            <li><strong>Certificazioni Linguistiche:</strong> Corsi pomeridiani per il conseguimento delle certificazioni PET (B1) e FCE (B2).</li>
+                            <li><strong>Stage Linguistici all'estero:</strong> Opportunità per gli studenti del triennio di partecipare a soggiorni-studio di una settimana in Irlanda o Inghilterra per immergersi nella lingua e nella cultura locali.</li>
+                            <li><strong>Progetto UTAH:</strong> Prestigioso programma triennale di scambio di buone pratiche didattiche con l'ateneo americano "Utah State University". La scuola ospita docenti tirocinanti specializzati in discipline STEM, organizzando lezioni in compresenza e "English Talks" su temi legati all'Agenda 2030, offrendo orientamento per percorsi universitari internazionali.</li>
+                            <li><strong>Certificazioni Linguistiche:</strong> Corsi pomeridiani specifici per preparare studenti e docenti al conseguimento delle certificazioni di lingua inglese PET (livello B1) e FCE (livello B2) del Cambridge Assessment English.</li>
                         </ul>
                     </article>
                 </div>
@@ -271,17 +269,17 @@
                 <div id="tab_inclusione" class="tab-content">
                      <article class="prose max-w-none prose-lg">
                         <h2 class="text-2xl font-bold mb-4">Azioni per l'Inclusione Scolastica</h2>
-                        <p>L'istituto si impegna a garantire il diritto allo studio e il successo formativo di ogni studente, con particolare attenzione ai Bisogni Educativi Speciali (BES), ai Disturbi Specifici dell'Apprendimento (DSA) e alla Disabilità.</p>
+                        <p>L'istituto si impegna a garantire il diritto allo studio e il successo formativo di ogni studente, con un'attenzione particolare ai Bisogni Educativi Speciali (BES), ai Disturbi Specifici dell'Apprendimento (DSA) e alla Disabilità, come dettagliato nel Piano Annuale per l'Inclusione (PAI).</p>
                         <h3>Supporto per DSA e BES:</h3>
                         <ul class="interactive-list">
-                            <li><strong>Piano Didattico Personalizzato (PDP):</strong> Redatto dal Consiglio di Classe in collaborazione con la famiglia.</li>
-                            <li><strong>Funzione Strumentale dedicata:</strong> Un docente referente supporta i colleghi e gestisce la comunicazione.</li>
+                            <li><strong>Piano Didattico Personalizzato (PDP):</strong> Viene redatto dal Consiglio di Classe per ogni studente con certificazione, in stretta collaborazione con la famiglia, per definire gli strumenti compensativi e le misure dispensative più efficaci.</li>
+                            <li><strong>Funzione Strumentale dedicata:</strong> Un docente referente si occupa di analizzare le certificazioni, supportare i colleghi nella stesura dei PDP, gestire la comunicazione con le famiglie e diffondere buone prassi.</li>
                         </ul>
                         <h3>Inclusione Alunni con Disabilità:</h3>
                         <ul class="interactive-list">
-                           <li><strong>Piano Educativo Individualizzato (PEI):</strong> Elaborato dal GLO per definire un percorso formativo su misura.</li>
-                           <li><strong>Progetti dedicati:</strong> Attività specifiche per lo sviluppo delle autonomie, come il 'Progetto creatività' e attività in serra.</li>
-                           <li><strong>Azioni di Rete:</strong> Collaborazione con enti territoriali per costruire un progetto di vita integrato.</li>
+                           <li><strong>Piano Educativo Individualizzato (PEI):</strong> È elaborato dal GLO (Gruppo di Lavoro Operativo) per ogni studente, in collaborazione con la famiglia e i servizi socio-sanitari, per definire un percorso formativo su misura.</li>
+                           <li><strong>Progetti dedicati:</strong> Vengono realizzati progetti specifici finalizzati all'inclusione e allo sviluppo delle autonomie, come il 'Progetto creatività', il 'Progetto serra' e le attività di pre-inserimento per i nuovi iscritti.</li>
+                           <li><strong>Azioni di Rete:</strong> L'istituto collabora attivamente con l'ambito territoriale, i Comuni, le agenzie educative e le unità di neuropsichiatria per costruire un progetto di vita integrato per lo studente.</li>
                         </ul>
                     </article>
                 </div>
@@ -292,13 +290,13 @@
                         <h2 class="text-2xl font-bold mb-4">Organizzazione della Scuola e delle Risorse</h2>
                          <h3>Organizzazione Oraria:</h3>
                         <ul class="interactive-list">
-                            <li><strong>Corsi Diurni:</strong> Orario di 32/33 ore settimanali, su cinque giorni (lunedì-venerdì).</li>
-                            <li><strong>Corsi Serali:</strong> Orario di 22 ore settimanali, su cinque giorni in fascia serale.</li>
+                            <li><strong>Corsi Diurni:</strong> L'orario è di 32/33 ore settimanali, distribuite su cinque giorni (lunedì-venerdì) con uscite differenziate per la gestione dei trasporti.</li>
+                            <li><strong>Corsi Serali:</strong> L'orario è di 22 ore settimanali, distribuite su cinque giorni (lunedì-venerdì) in fascia serale (18:15 - 22:35).</li>
                         </ul>
                         <h3>Figure e Funzioni:</h3>
-                        <p>La scuola si avvale di un Dirigente Scolastico, uno staff, Funzioni Strumentali, commissioni e coordinatori di dipartimento per garantire un'organizzazione efficiente.</p>
+                        <p>La scuola si avvale di un Dirigente Scolastico, uno staff di presidenza, Responsabili di indirizzo, Funzioni Strumentali (Disabilità, DSA, Orientamento), Commissioni (eventi, orario, sicurezza) e Coordinatori di Dipartimento per un'organizzazione efficiente e capillare.</p>
                          <h3>Formazione del Personale:</h3>
-                        <p>È previsto un piano di formazione triennale per docenti e ATA, con focus su inclusione, innovazione digitale, lingue e approfondimenti disciplinari.</p>
+                        <p>È previsto un piano di formazione triennale per il personale docente e ATA, con focus su inclusione, primo soccorso, innovazione digitale (con riferimento alle nuove dotazioni), lingue (CLIL), gestione del disagio scolastico e approfondimenti disciplinari.</p>
                     </article>
                 </div>
                 
@@ -306,11 +304,14 @@
                 <div id="tab5" class="tab-content">
                      <article class="prose max-w-none prose-lg">
                         <h2 class="text-2xl font-bold mb-4">Processi di Valutazione e Autovalutazione</h2>
-                        <p>La valutazione e l'autovalutazione sono processi chiave per garantire la qualità dell'offerta formativa.</p>
+                        <p>La valutazione degli apprendimenti e l'autovalutazione d'istituto sono processi fondamentali per garantire la qualità dell'offerta formativa e il successo degli studenti.</p>
                         <h3>Valutazione degli Apprendimenti:</h3>
-                        <p>La scuola ha sviluppato un <strong>curricolo verticale</strong> basato sulle Competenze chiave europee. Le griglie di valutazione sono pubbliche e disponibili sul sito.</p>
+                        <p>La scuola ha sviluppato un <strong>curricolo verticale d'istituto</strong> basato sulle Competenze chiave europee. La valutazione, per tutti gli indirizzi, non si limita al profitto ma considera le competenze acquisite. Le programmazioni e le griglie di valutazione sono pubbliche e disponibili sul sito della scuola.</p>
+                        <ul class="interactive-list">
+                            <li><strong>Corsi Serali (IDA):</strong> La valutazione si basa su un <strong>Patto Formativo Individuale (PFI)</strong>, che valorizza i crediti formali, non formali e informali (come esperienze lavorative pregresse) dello studente adulto.</li>
+                        </ul>
                          <h3>Autovalutazione d'Istituto:</h3>
-                         <p>Il processo si basa sul <strong>Rapporto di Autovalutazione (RAV)</strong>, da cui derivano le priorità e il <strong>Piano di Miglioramento (PdM)</strong> che guida le azioni della scuola per il triennio.</p>
+                         <p>Il processo di autovalutazione si basa sui dati del <strong>Rapporto di Autovalutazione (RAV)</strong>. Da questo documento derivano le priorità strategiche e il <strong>Piano di Miglioramento (PdM)</strong>, che guida le azioni concrete della scuola per il triennio al fine di migliorare costantemente i risultati degli studenti e l'efficacia didattica e organizzativa.</p>
                     </article>
                 </div>
 
@@ -339,7 +340,7 @@
                             <li><strong>PEC:</strong> miis08300x@pec.istruzione.it</li>
                         </ul>
                         <h3>Orari Uffici</h3>
-                        <p>Gli orari di ricevimento degli uffici (didattica, personale, acquisti) sono disponibili sul sito web ufficiale.</p>
+                        <p>Gli orari di ricevimento al pubblico degli uffici di didattica, personale e acquisti sono disponibili e aggiornati sul sito web ufficiale dell'istituto.</p>
                     </article>
                 </div>
 
@@ -347,12 +348,12 @@
                 <div id="tab6" class="tab-content">
                     <article class="prose max-w-none prose-lg">
                         <h2 class="text-2xl font-bold mb-4">Documenti e Link di Riferimento</h2>
-                        <p>Qui puoi trovare i link diretti ai documenti ufficiali e alle sezioni più importanti del sito della scuola.</p>
+                        <p>Qui puoi trovare i link diretti ai documenti ufficiali e alle sezioni più importanti del sito della scuola per ulteriori approfondimenti.</p>
                         <ul class="interactive-list">
                             <li><a href="https://agrariomendel.edu.it/servizi/203-ptof-piano-offerta-triennale-2025-2028" target="_blank" rel="noopener noreferrer">PTOF Completo (PDF)</a></li>
                             <li><a href="https://agrariomendel.edu.it/servizi/95-pi-piano-per-linclusione" target="_blank" rel="noopener noreferrer">Piano per l'Inclusione (PAI)</a></li>
                             <li><a href="https://agrariomendel.edu.it/la-scuola/le-carte/21-regolamento-distituto" target="_blank" rel="noopener noreferrer">Regolamento d'Istituto</a></li>
-                            <li><a href="http://www.agrariomendel.edu.it" target="_blank" rel="noopener noreferrer">Sito Web Ufficiale</a></li>
+                            <li><a href="http://www.agrariomendel.edu.it" target="_blank" rel="noopener noreferrer">Sito Web Ufficiale dell'IIS Mendel</a></li>
                         </ul>
                     </article>
                 </div>
@@ -384,7 +385,6 @@
                 });
             });
 
-            // Initial render for the default active tab if it's the charts one
             if (document.querySelector('.tab-button.active').dataset.tab === 'tab_grafici') {
                  renderAllCharts();
                  chartsInitialized = true;
@@ -392,6 +392,14 @@
         });
 
         function renderAllCharts() {
+            // Distrugge i grafici esistenti per evitare sovrapposizioni
+            ['docentiChart', 'ataChart', 'multimediaChart', 'competenzeChart'].forEach(id => {
+                const chartInstance = Chart.getChart(id);
+                if (chartInstance) {
+                    chartInstance.destroy();
+                }
+            });
+
             const chartFont = "'Inter', sans-serif";
             const commonOptions = (titleText) => ({
                 responsive: true,
@@ -428,9 +436,9 @@
                 type: 'bar',
                 data: {
                     labels: ['PC/Tablet Aule', 'LIM/Board Aule', 'PC/Tablet Lab', 'LIM/Board Lab', 'Fruizione Distanza', 'STEM'],
-                    datasets: [{ label: 'Numero Dispositivi', data: [32, 32, 44, 7, 45, 26], backgroundColor: '#667eea' }]
+                    datasets: [{ label: 'Numero Dispositivi', data: [32, 32, 44, 7, 45, 26], backgroundColor: '#667eea', borderRadius: 4 }]
                 },
-                options: { ...commonOptions('Principali Dotazioni Multimediali'), indexAxis: 'y', scales: { x: { ticks: { font: { family: chartFont } } }, y: { ticks: { font: { family: chartFont } } } } }
+                options: { ...commonOptions('Principali Dotazioni Multimediali'), indexAxis: 'y', plugins: { legend: {display: false}}, scales: { x: { ticks: { font: { family: chartFont } } }, y: { ticks: { font: { family: chartFont } } } } }
             });
 
             // Grafico 4: Competenze
@@ -453,3 +461,4 @@
 
 </body>
 </html>
+
