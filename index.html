@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintesi del PTOF - IIS Mendel</title>
+    <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Particelle decorative */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 1px, transparent 1px),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 100px 100px;
+            pointer-events: none;
+            animation: floatParticles 20s linear infinite;
+            z-index: 0;
+        }
+        
+        @keyframes floatParticles {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(20px); }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            animation: slideDownFade 0.8s ease-out;
+        }
+        
+        @keyframes slideDownFade {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            letter-spacing: -1px;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
+            50% { text-shadow: 0 0 40px rgba(102, 126, 234, 0.8); }
+        }
+        
+        main {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Navigazione Tab Completamente Rinnovata */
+        nav {
+            background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(240,147,251,0.1) 50%, rgba(255,255,255,0.7) 100%);
+            padding: 8px 12px;
+            gap: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tab-button {
+            position: relative;
+            overflow: visible;
+            background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-radius: 12px;
+            padding: 12px 16px !important;
+            font-weight: 700;
+            color: #555;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        
+        .tab-button::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #00f2fe);
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .tab-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            border-radius: 12px;
+            transition: left 0.6s;
+        }
+        
+        .tab-button:hover {
+            color: #667eea;
+            border-color: rgba(102, 126, 234, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+            background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(240,147,251,0.1) 100%);
+        }
+        
+        .tab-button:hover::before {
+            opacity: 0.1;
+        }
+        
+        .tab-button:hover::after {
+            left: 100%;
+        }
+        
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: translateY(-6px) scale(1.08);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .tab-button.active::before {
+            opacity: 0;
+        }
+        
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 10px solid white;
+            animation: popDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        @keyframes popDown {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                bottom: -12px;
+                opacity: 1;
+            }
+        }
+        
+        .tab-button:nth-child(1).active { background: linear-gradient(135deg, #ff6b6b 0%, #ff8e72 100%); }
+        .tab-button:nth-child(2).active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .tab-button:nth-child(3).active { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .tab-button:nth-child(4).active { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .tab-button:nth-child(5).active { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .tab-button:nth-child(6).active { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .tab-button:nth-child(7).active { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        .tab-button:nth-child(8).active { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .tab-button:nth-child(9).active { background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); }
+        
+        .tab-content {
+            display: none;
+            animation: fadeInScale 0.5s ease-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(15px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .prose h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .prose h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f093fb, #00f2fe);
+            border-radius: 2px;
+            animation: slideRight 0.6s ease-out;
+        }
+        
+        @keyframes slideRight {
+            from { width: 0; }
+            to { width: 60px; }
+        }
+        
+        .prose h3 {
+            color: #764ba2;
+            font-weight: 700;
+            margin-top: 25px;
+            animation: slideInLeft 0.6s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .interactive-list li {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            padding: 12px 12px 12px 50px;
+            border-left: 4px solid transparent;
+            border-radius: 0 12px 12px 0;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0) 0%, rgba(102, 126, 234, 0.05) 100%);
+            margin-bottom: 10px;
+        }
+        
+        .interactive-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 15px;
+            font-size: 1.2em;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); opacity: 0.6; }
+            50% { transform: translateY(-8px); opacity: 1; }
+        }
+        
+        .interactive-list li:hover {
+            transform: translateX(8px) scale(1.02);
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.15) 100%);
+            border-left-color: #f093fb;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+        }
+        
+        .prose a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .prose a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #f093fb);
+            transition: width 0.3s ease;
+        }
+        
+        .prose a:hover {
+            color: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        .prose a:hover::after {
+            width: 100%;
+        }
+        
+        .prose p {
+            transition: all 0.3s ease;
+            line-height: 1.8;
+        }
+        
+        .prose p:hover {
+            color: #333;
+        }
+        
+        /* Responsive adjustments */
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(102, 126, 234, 0.2);
+            margin-top: 60px;
+            animation: slideUpFade 0.8s ease-out 0.3s backwards;
+        }
+        
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        footer p {
+            color: #555;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- Intestazione -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold">📚 Sintesi del Piano Triennale dell'Offerta Formativa (PTOF)</h1>
+            <p class="text-lg text-gray-600 mt-4 font-semibold">🌱 IIS "Gregorio Mendel", Villa Cortese - Triennio 2025/2028</p>
+        </header>
+
+        <main class="rounded-3xl shadow-2xl overflow-hidden">
+            <!-- Navigazione a Schede -->
+            <div>
+                <nav class="overflow-x-auto" aria-label="Tabs">
+                    <button class="tab-button active flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab1">
+                        📍 Scuola e Contesto
+                    </button>
+                    <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab2">
+                        🎯 Scelte Strategiche
+                    </button>
+                    <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab3">
+                        🎓 Offerta Formativa
+                    </button>
+                    <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab_progetti">
+                        🚀 Progetti
+                    </button>
+                    <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab_internazionalizzazione">
+                        🌍 Internazionalizzazione
+                    </button>
+                     <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab_inclusione">
+                        ❤️ Inclusione
+                    </button>
+                    <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab4">
+                        ⚙️ Organizzazione
+                    </button>
+                    <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab5">
+                        📊 Valutazione
+                    </button>
+                    <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab_contatti">
+                        📞 Contatti
+                    </button>
+                     <button class="tab-button flex-shrink-0 font-semibold text-gray-700 whitespace-nowrap text-sm sm:text-base transition" data-tab="tab6">
+                        🔗 Link Utili
+                    </button>
+                </nav>
+            </div>
+            <div class="p-6 sm:p-8">
+                <!-- Tab 1: La Scuola e il Contesto -->
+                <div id="tab1" class="tab-content active">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">La Nostra Identità e il Contesto Territoriale</h2>
+                        <p>L'Istituto Mendel, situato a Villa Cortese, nasce dalla storica Fondazione Scuola di Agricoltura Ferrazzi e Cova. La sua missione, voluta dal fondatore Francesco Ferrazzi, è sempre stata quella di promuovere l'insegnamento tecnico-pratico nel settore agricolo. Evolutosi nel tempo, l'istituto ha ampliato la sua offerta formativa includendo corsi di Istruzione e Formazione Professionale (IeFP) e percorsi serali per adulti, mantenendo una proficua collaborazione con la Fondazione.</p>
+                        <h3>Punti Chiave del Contesto:</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Analisi del territorio:</strong> L'istituto opera in un'area a vocazione industriale, ma con una forte tradizione agricola. Collabora con consorzi, parchi e associazioni di categoria, oltre a numerose aziende medio-piccole (florovivaistiche, zootecniche, agroalimentari) presenti tra le province di Milano, Varese, Como e Novara.</li>
+                            <li><strong>Popolazione scolastica:</strong> Per l'a.s. 2024/2025, l'istituto conta 600 studenti suddivisi in 36 classi tra i vari indirizzi (Tecnico diurno e serale, Professionale diurno e serale).</li>
+                            <li><strong>Risorse della scuola:</strong> La struttura comprende due edifici con aule dotate di Digital Board, laboratori specializzati (informatica, chimica, biologia, meristematica, trasformazione prodotti), aule TEAL, una palestra, una serra produttiva e accesso all'azienda agricola San Grato per le esercitazioni pratiche.</li>
+                             <li><strong>Risorse professionali:</strong> L'organico è composto da 128 docenti (di cui il 73% di ruolo da più di 5 anni) e personale ATA qualificato, inclusi assistenti tecnici e addetti all'azienda agraria.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Tab 2: Scelte Strategiche -->
+                <div id="tab2" class="tab-content">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Vision, Priorità e Piano di Miglioramento</h2>
+                        <p>L'Istituto Mendel si propone di formare periti agrari pronti ad affrontare le sfide della sostenibilità ambientale e del cambiamento economico-sociale. La vision è quella di preparare tecnici con competenze in agricoltura conservativa, di precisione e 4.0, capaci di aggiornarsi costantemente e spendibili nel mercato globale.</p>
+                        <h3>Priorità Strategiche e Traguardi:</h3>
+                        <ol class="interactive-list">
+                            <li><strong>Miglioramento esiti INVALSI:</strong> Raggiungere la media nazionale nei risultati di inglese nelle classi quinte.</li>
+                            <li><strong>Competenze chiave europee:</strong> Promuovere il rispetto delle regole, dei beni comuni e dell'ambiente, incrementando la media del voto di condotta.</li>
+                            <li><strong>Successo post-diploma:</strong> Favorire un maggior successo negli studi universitari, puntando a far sì che almeno il 70% degli iscritti consegua più della metà dei crediti previsti al primo anno.</li>
+                        </ol>
+                        <h3>Piano di Miglioramento:</h3>
+                         <ul class="interactive-list">
+                            <li><strong>Offerta Formativa:</strong> Integrare le programmazioni con moduli specifici per le nuove dotazioni tecnologiche e promuovere la formazione dei docenti (CLIL, didattica per competenze, digitale).</li>
+                            <li><strong>Contrasto alla dispersione:</strong> Attivare interventi sulle fragilità e difficoltà di apprendimento, creando un team dedicato.</li>
+                            <li><strong>Sostenibilità e Cittadinanza:</strong> Realizzare un progetto per la raccolta differenziata e integrare i criteri del voto di condotta con le competenze di cittadinanza.</li>
+                            <li><strong>Comunicazione:</strong> Rinnovare il sito web, migliorare la comunicazione interna e promuovere la visibilità della scuola sul territorio.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Tab 3: Offerta Formativa -->
+                <div id="tab3" class="tab-content">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Indirizzi di Studio e Attività Curricolari</h2>
+                        <p>L'offerta formativa è ampia e diversificata per rispondere alle diverse esigenze degli studenti, sia giovani che adulti.</p>
+                        <h3>Indirizzi di Studio:</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Istituto Tecnico (Diurno e Serale):</strong> Settore Tecnologico "Agraria, Agroalimentare, Agroindustria" con articolazioni in "Produzioni e Trasformazioni" (PT) e "Gestione dell'Ambiente e del Territorio" (GAT).</li>
+                            <li><strong>Istruzione e Formazione Professionale (IeFP) e Istituto Professionale (Diurno e Serale):</strong> Percorsi triennali per la qualifica di Operatore Agricolo, con possibilità di un IV anno per il diploma di Tecnico Agricolo e un V anno per la maturità professionale.</li>
+                        </ul>
+                         <h3>Attività Curricolari Chiave:</h3>
+                        <ul class="interactive-list">
+                           <li><strong>FORMAZIONE SCUOLA-LAVORO (ex Alternanza):</strong> Percorsi obbligatori per il triennio (150 ore per il tecnico), che includono attività nell'azienda S. Grato, stage estivi, partecipazione a convegni e visite aziendali.</li>
+                           <li><strong>Educazione Civica:</strong> Insegnamento trasversale di 33 ore annue, con un curricolo focalizzato su Costituzione, Sviluppo Sostenibile e Cittadinanza Digitale, contestualizzato all'indirizzo agrario.</li>
+                           <li><strong>Uscite didattiche e Viaggi d'istruzione:</strong> Attività finalizzate ad arricchire i contenuti dei piani di studio, con visite a siti di produzione agro-alimentare, fiere di settore e luoghi di interesse culturale.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Tab Progetti -->
+                <div id="tab_progetti" class="tab-content">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Progetti di Ampliamento dell'Offerta Formativa</h2>
+                        <p>L'istituto offre numerose iniziative curricolari ed extracurricolari per arricchire il percorso formativo degli studenti, promuovere il successo scolastico e sviluppare una cittadinanza attiva e consapevole.</p>
+                        <h3>Alcuni Progetti Significativi:</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Apimania:</strong> Un corso teorico-pratico per conoscere i fondamenti dell'apicoltura e le tecniche di allevamento.</li>
+                            <li><strong>Dal Giardino delle Piante Aromatiche...:</strong> Un laboratorio per la coltivazione e trasformazione di piante aromatiche per la produzione di oli essenziali e prodotti erboristici.</li>
+                             <li><strong>Gelsi-bachicoltura SerlBioTech:</strong> Un progetto per riscoprire e valorizzare un'attività agricola tradizionale quasi scomparsa, l'allevamento del baco da seta.</li>
+                            <li><strong>Santuario in Fiore:</strong> Collaborazione con Legambiente per allestire e valorizzare con le produzioni della scuola un santuario del '500 a Parabiago.</li>
+                             <li><strong>Cultura della Legalità:</strong> Incontri sull'uso consapevole di cellulari e social network in collaborazione con le forze dell'ordine.</li>
+                            <li><strong>Progetti FAI e WWF:</strong> Collaborazioni per l'educazione al patrimonio (Apprendisti Ciceroni) e alla sostenibilità ambientale (Citizen Science).</li>
+                            <li><strong>Gruppo Sportivo Scolastico:</strong> Per svolgere gratuitamente attività sportiva e partecipare a tornei e gare studentesche.</li>
+                            <li><strong>GIS (Gruppo Interesse Scala):</strong> Per assistere a opere e balletti al Teatro alla Scala di Milano a prezzi agevolati.</li>
+                            <li><strong>AVIS a Scuola:</strong> Incontri di sensibilizzazione sull'importanza della donazione volontaria di sangue.</li>
+                            <li><strong>Creatività e Cultura:</strong> L'offerta è arricchita da laboratori di teatro, concorsi di poesia e fotografia per valorizzare le potenzialità creative ed espressive degli studenti.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Tab Internazionalizzazione -->
+                <div id="tab_internazionalizzazione" class="tab-content">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Progetti di Internazionalizzazione e Competenze Linguistiche</h2>
+                        <p>La scuola promuove attivamente l'apertura culturale e il potenziamento delle competenze linguistiche attraverso esperienze dirette all'estero e collaborazioni internazionali.</p>
+                        <h3>Iniziative Principali:</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Stage Linguistici all'estero:</strong> Agli studenti del triennio viene offerta l'opportunità di partecipare a soggiorni-studio di una settimana in Irlanda o Inghilterra. Questa esperienza permette di approfondire la conoscenza della lingua e di immergersi nella cultura e nello stile di vita locali.</li>
+                            <li><strong>Progetto UTAH:</strong> Un prestigioso programma triennale di scambio di buone pratiche didattiche con l'ateneo americano "Utah State University". La scuola ospita docenti tirocinanti specializzati in discipline STEM, organizzando lezioni in compresenza, attività pomeridiane e "English Talks" su temi legati all'Agenda 2030.</li>
+                            <li><strong>Certificazioni Linguistiche:</strong> Vengono organizzati corsi pomeridiani per preparare studenti e docenti al conseguimento delle certificazioni di lingua inglese PET (livello B1) e FCE (livello B2) del Cambridge Assessment English.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Tab Inclusione -->
+                <div id="tab_inclusione" class="tab-content">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Azioni per l'Inclusione Scolastica</h2>
+                        <p>L'istituto si impegna a garantire il diritto allo studio e il successo formativo di ogni studente, con particolare attenzione ai Bisogni Educativi Speciali (BES), ai Disturbi Specifici dell'Apprendimento (DSA) e alla Disabilità, come dettagliato nel Piano Annuale per l'Inclusione (PAI).</p>
+                        <h3>Supporto per DSA e BES:</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Piano Didattico Personalizzato (PDP):</strong> Viene redatto dal Consiglio di Classe per ogni studente con certificazione, in collaborazione con la famiglia, per definire gli strumenti compensativi e le misure dispensative più efficaci.</li>
+                            <li><strong>Funzione Strumentale dedicata:</strong> Un docente referente si occupa di analizzare le certificazioni, supportare i colleghi nella stesura dei PDP e gestire la comunicazione con le famiglie e gli specialisti.</li>
+                        </ul>
+                        <h3>Inclusione Alunni con Disabilità:</h3>
+                        <ul class="interactive-list">
+                           <li><strong>Piano Educativo Individualizzato (PEI):</strong> È elaborato dal GLO (Gruppo di Lavoro Operativo) per ogni studente, in stretta collaborazione con la famiglia e i servizi socio-sanitari, per definire un percorso formativo su misura.</li>
+                           <li><strong>Progetti dedicati:</strong> Vengono realizzati progetti specifici finalizzati all'inclusione e allo sviluppo delle autonomie, come il 'Progetto creatività', attività in serra e il pre-inserimento per i nuovi iscritti.</li>
+                           <li><strong>Azioni di Rete:</strong> L'istituto collabora attivamente con l'ambito territoriale, i Comuni, le agenzie educative e le unità di neuropsichiatria di riferimento per costruire un progetto di vita integrato per lo studente.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Tab 4: Organizzazione -->
+                <div id="tab4" class="tab-content">
+                     <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Organizzazione della Scuola e delle Risorse</h2>
+                        <p>Il modello organizzativo dell'istituto è strutturato per garantire efficienza e un rapporto chiaro con l'utenza.</p>
+                        <h3>Organizzazione Oraria:</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Corsi Diurni:</strong> L'orario è di 32/33 ore settimanali, distribuite su cinque giorni (lunedì-venerdì) con uscite differenziate per permettere la gestione dei trasporti.</li>
+                            <li><strong>Corsi Serali:</strong> L'orario è di 22 ore settimanali, distribuite su cinque giorni (lunedì-venerdì) in fascia serale (18:15 - 22:35).</li>
+                        </ul>
+                        <h3>Figure e Funzioni:</h3>
+                        <p>La scuola si avvale di un Dirigente Scolastico, uno staff di presidenza, responsabili di indirizzo, Funzioni Strumentali (per Disabilità, DSA, Orientamento), commissioni dedicate (eventi, orario, sicurezza, viaggi) e coordinatori di dipartimento.</p>
+                         <h3>Rapporti con l'Utenza:</h3>
+                        <p>Gli uffici di didattica, personale e acquisti hanno orari di ricevimento al pubblico specifici per docenti, genitori e alunni, consultabili sul sito web.</p>
+                         <h3>Formazione del Personale:</h3>
+                        <p>È previsto un piano di formazione triennale per il personale docente e ATA, con focus su inclusione, primo soccorso, innovazione digitale, lingue (CLIL), disagio scolastico e approfondimenti disciplinari legati alle nuove dotazioni tecnologiche.</p>
+                    </article>
+                </div>
+                
+                <!-- Tab 5: Valutazione -->
+                <div id="tab5" class="tab-content">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Processi di Valutazione e Autovalutazione</h2>
+                        <p>La valutazione degli apprendimenti e l'autovalutazione d'istituto sono processi fondamentali per garantire la qualità dell'offerta formativa e il successo degli studenti.</p>
+                        <h3>Valutazione degli Apprendimenti:</h3>
+                        <p>La scuola ha sviluppato un <strong>curricolo verticale d'istituto</strong> basato sulle Competenze chiave europee. La valutazione, per tutti gli indirizzi, non si limita al profitto ma considera le competenze acquisite. Le programmazioni dipartimentali e le griglie di valutazione sono pubbliche e disponibili sul sito della scuola.</p>
+                        <ul class="interactive-list">
+                            <li><strong>Corsi IeFP:</strong> La valutazione è suddivisa in aree di competenza (linguaggi, storico-giuridica, matematico-scientifica, tecnico-professionale). L'ammissione agli esami di qualifica e diploma dipende dalla frequenza (minimo 75%), dalla condotta e da una valutazione complessivamente sufficiente.</li>
+                            <li><strong>Corsi Serali (IDA):</strong> La valutazione si basa su un <strong>Patto Formativo Individuale (PFI)</strong>, che tiene conto dei crediti formali, non formali e informali (come esperienze lavorative) maturati dallo studente adulto.</li>
+                        </ul>
+                         <h3>Autovalutazione d'Istituto:</h3>
+                         <p>Il processo di autovalutazione si basa sui dati del <strong>Rapporto di Autovalutazione (RAV)</strong>. Da questo documento derivano le priorità strategiche e il <strong>Piano di Miglioramento (PdM)</strong>, che guida le azioni della scuola per il triennio, con l'obiettivo di migliorare costantemente i risultati degli studenti e l'efficacia didattica e organizzativa.</p>
+                    </article>
+                </div>
+
+                <!-- Tab Contatti -->
+                <div id="tab_contatti" class="tab-content">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Contatti e Informazioni Utili</h2>
+                        <p>Puoi contattare l'istituto attraverso i seguenti canali. Siamo a tua disposizione per rispondere a qualsiasi domanda o dubbio.</p>
+                        
+                        <h3>📍 Sede Principale</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Via Ferrazzi, 15</strong> - 20035 Villa Cortese (MI)</li>
+                            <li><strong>Provincia:</strong> Milano - Regione Lombardia</li>
+                        </ul>
+
+                        <h3>☎️ Contatti Diretti</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Telefono:</strong> 0331 434311</li>
+                            <li><strong>Fax:</strong> 0331 431621</li>
+                            <li><strong>Email Generale:</strong> miis08300x@istruzione.it</li>
+                            <li><strong>Email Segreteria:</strong> info@agrariomendel.it</li>
+                            <li><strong>PEC (Posta Certificata):</strong> miis08300x@pec.istruzione.it</li>
+                        </ul>
+
+                        <h3>👥 Email Specifiche</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Dirigente Scolastico:</strong> dirigente@agrariomendel.it</li>
+                            <li><strong>Vicepresidenza:</strong> vicepresidenza@agrariomendel.it</li>
+                            <li><strong>Ufficio Didattica:</strong> didattica@agrariomendel.it</li>
+                            <li><strong>Bullismo e Cyberbullismo:</strong> Contatta la segreteria per il referente</li>
+                        </ul>
+
+                        <h3>🕐 Orari di Apertura Segreteria</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Lunedì - Venerdì:</strong> su appuntamento telefonico (0331 434311)</li>
+                            <li><strong>Ricevimento pubblico:</strong> dalle 13:00 alle 13:30</li>
+                            <li><strong>N.B.:</strong> Per qualsiasi richiesta, è consigliato contattare prima telefonicamente per fissare un appuntamento</li>
+                        </ul>
+
+                        <h3>📋 Codici Identificativi</h3>
+                        <ul class="interactive-list">
+                            <li><strong>Codice Meccanografico:</strong> MIIS08300X</li>
+                            <li><strong>Codice Fiscale:</strong> 92004160153</li>
+                        </ul>
+
+                        <h3>🌐 Sito Web Ufficiale</h3>
+                        <p>Per maggiori informazioni, visita il nostro sito web completo: <a href="http://www.agrariomendel.edu.it" target="_blank" rel="noopener noreferrer">www.agrariomendel.edu.it</a></p>
+                    </article>
+                </div>
+
+                <!-- Tab 6: Link Utili -->
+                <div id="tab6" class="tab-content">
+                    <article class="prose max-w-none prose-lg">
+                        <h2 class="text-2xl font-bold mb-4">Documenti e Link di Riferimento</h2>
+                        <p>Qui puoi trovare i link diretti ai documenti ufficiali e alle sezioni più importanti del sito della scuola.</p>
+                        <ul class="interactive-list">
+                            <li><a href="https://agrariomendel.edu.it/servizi/203-ptof-piano-offerta-triennale-2025-2028" target="_blank" rel="noopener noreferrer">PTOF Completo (PDF) - Triennio 2025/2028</a></li>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer">Rapporto di Autovalutazione (RAV)</a></li>
+                            <li><a href="https://agrariomendel.edu.it/servizi/95-pi-piano-per-linclusione" target="_blank" rel="noopener noreferrer">P.I. - Piano per l'Inclusione</a></li>
+                            <li><a href="https://agrariomendel.edu.it/servizi/34-piano-delle-attivita-2526" target="_blank" rel="noopener noreferrer">Piano delle Attività 2025/2026</a></li>
+                            <li><a href="https://agrariomendel.edu.it/la-scuola/le-carte/21-regolamento-distituto" target="_blank" rel="noopener noreferrer">Regolamento d'Istituto</a></li>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer">Regolamento Viaggi</a></li>
+                             <li><a href="http://www.agrariomendel.edu.it" target="_blank" rel="noopener noreferrer">Sito Web Ufficiale dell'IIS Mendel</a></li>
+                        </ul>
+                        <p>Questi documenti forniscono un quadro completo e dettagliato dell'organizzazione e dell'offerta formativa del nostro istituto. Si consiglia la lettura per approfondire ogni aspetto qui sintetizzato.</p>
+                    </article>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>✨ Questa pagina è stata creata dall'IIS MENDEL - Villa Cortese (MI) ✨</p>
+        </div>
+    </footer>
+
+    <script>
+        // Aspetta che il DOM sia completamente caricato
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Rimuovi active da TUTTI gli elementi
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Aggiungi active solo al target
+                    this.classList.add('active');
+                    const target = document.getElementById(targetTab);
+                    if (target) {
+                        target.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
