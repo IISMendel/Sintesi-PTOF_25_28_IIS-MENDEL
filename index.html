@@ -121,9 +121,6 @@
         }
         
         .prose h2 {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -192,39 +189,6 @@
         .prose a:hover { color: #764ba2; }
         .prose a:hover::after { width: 100%; }
 
-        .copy-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            opacity: 0.5;
-            transition: opacity 0.2s, transform 0.2s;
-        }
-        .copy-button:hover {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-        
-        #copy-notification {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #3b4b8f;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s, transform 0.3s;
-            pointer-events: none;
-        }
-
-        #copy-notification.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(-10px);
-        }
     </style>
 </head>
 <body class="antialiased text-gray-700">
@@ -257,12 +221,7 @@
                 <!-- Tab 1: La Scuola e il Contesto -->
                 <div id="tab1" class="tab-content active">
                     <article class="prose max-w-none prose-lg">
-                        <h2>
-                            <span>La Nostra Identità e il Contesto Territoriale</span>
-                            <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                            </button>
-                        </h2>
+                        <h2>La Nostra Identità e il Contesto Territoriale</h2>
                         <p>L'Istituto Mendel, situato a Villa Cortese, affonda le sue radici nella storica Fondazione Scuola di Agricoltura Ferrazzi e Cova. La sua missione originaria, voluta dal fondatore Francesco Ferrazzi, è sempre stata quella di promuovere l'insegnamento tecnico-pratico nel settore agricolo. Nel tempo, l'istituto ha ampliato la sua offerta formativa includendo corsi di Istruzione e Formazione Professionale (IeFP) e percorsi serali per adulti, mantenendo una proficua e continua collaborazione con la Fondazione.</p>
                         <h3>Punti Chiave del Contesto:</h3>
                         <ul class="interactive-list">
@@ -277,12 +236,7 @@
                 <!-- Tab 2: Scelte Strategiche -->
                 <div id="tab2" class="tab-content">
                     <article class="prose max-w-none prose-lg">
-                        <h2>
-                           <span>Vision, Priorità e Piano di Miglioramento</span>
-                           <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                           </button>
-                        </h2>
+                        <h2>Vision, Priorità e Piano di Miglioramento</h2>
                         <p>La vision dell'Istituto Mendel è formare tecnici agrari pronti ad affrontare le sfide della sostenibilità ambientale e del cambiamento economico-sociale, con competenze avanzate in agricoltura conservativa, di precisione e 4.0. L'obiettivo è preparare figure professionali capaci di aggiornarsi costantemente e spendibili in un mercato globale, grazie anche a progetti innovativi come <strong>"Mendel 4.0"</strong>, che introduce sensoristica, mappatura GPS e intelligenza artificiale nella difesa fitosanitaria.</p>
                         <h3>Priorità Strategiche e Traguardi:</h3>
                         <ol class="interactive-list">
@@ -303,12 +257,7 @@
                 <!-- Tab 3: Offerta Formativa -->
                 <div id="tab3" class="tab-content">
                      <article class="prose max-w-none prose-lg">
-                        <h2>
-                            <span>Indirizzi di Studio e Attività Curricolari</span>
-                            <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                            </button>
-                        </h2>
+                        <h2>Indirizzi di Studio e Attività Curricolari</h2>
                         <p>L'offerta formativa è ampia e strutturata per rispondere alle diverse esigenze degli studenti, sia giovani che adulti, combinando una solida base teorica con un'intensa attività pratica.</p>
                         <h3>Indirizzi di Studio:</h3>
                         <ul class="interactive-list">
@@ -327,12 +276,7 @@
                 <!-- Tab Progetti -->
                 <div id="tab_progetti" class="tab-content">
                     <article class="prose max-w-none prose-lg">
-                        <h2>
-                            <span>Progetti di Ampliamento dell'Offerta Formativa</span>
-                             <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                            </button>
-                        </h2>
+                        <h2>Progetti di Ampliamento dell'Offerta Formativa</h2>
                         <p>L'istituto offre un'ampia gamma di iniziative curricolari ed extracurricolari per arricchire il percorso formativo degli studenti, promuovere il successo scolastico e sviluppare una cittadinanza attiva e consapevole.</p>
                         <h3>Elenco dei Progetti Principali:</h3>
                         <ul class="interactive-list">
@@ -353,12 +297,7 @@
                 <!-- Tab Internazionalizzazione -->
                 <div id="tab_internazionalizzazione" class="tab-content">
                     <article class="prose max-w-none prose-lg">
-                        <h2>
-                            <span>Progetti di Internazionalizzazione</span>
-                             <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                            </button>
-                        </h2>
+                        <h2>Progetti di Internazionalizzazione</h2>
                         <p>La scuola promuove attivamente l'apertura culturale e il potenziamento delle competenze linguistiche attraverso esperienze dirette all'estero e collaborazioni internazionali di alto profilo.</p>
                         <h3>Iniziative Principali:</h3>
                         <ul class="interactive-list">
@@ -372,12 +311,7 @@
                 <!-- Tab Inclusione -->
                 <div id="tab_inclusione" class="tab-content">
                      <article class="prose max-w-none prose-lg">
-                        <h2>
-                           <span>Azioni per l'Inclusione Scolastica</span>
-                           <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                           </button>
-                        </h2>
+                        <h2>Azioni per l'Inclusione Scolastica</h2>
                         <p>L'istituto si impegna a garantire il diritto allo studio e il successo formativo di ogni studente, con un'attenzione particolare ai Bisogni Educativi Speciali (BES), ai Disturbi Specifici dell'Apprendimento (DSA) e alla Disabilità, come dettagliato nel Piano Annuale per l'Inclusione (PAI).</p>
                         <h3>Supporto per DSA e BES:</h3>
                         <ul class="interactive-list">
@@ -396,12 +330,7 @@
                 <!-- Tab 4: Organizzazione -->
                 <div id="tab4" class="tab-content">
                     <article class="prose max-w-none prose-lg">
-                        <h2>
-                            <span>Organizzazione della Scuola e delle Risorse</span>
-                             <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                            </button>
-                        </h2>
+                        <h2>Organizzazione della Scuola e delle Risorse</h2>
                          <h3>Organizzazione Oraria:</h3>
                         <ul class="interactive-list">
                             <li><strong>Corsi Diurni:</strong> L'orario è di 32/33 ore settimanali, distribuite su cinque giorni (lunedì-venerdì) con uscite differenziate per la gestione dei trasporti.</li>
@@ -417,12 +346,7 @@
                 <!-- Tab 5: Valutazione -->
                 <div id="tab5" class="tab-content">
                      <article class="prose max-w-none prose-lg">
-                        <h2>
-                            <span>Processi di Valutazione e Autovalutazione</span>
-                             <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                            </button>
-                        </h2>
+                        <h2>Processi di Valutazione e Autovalutazione</h2>
                         <p>La valutazione degli apprendimenti e l'autovalutazione d'istituto sono processi fondamentali per garantire la qualità dell'offerta formativa e il successo degli studenti.</p>
                         <h3>Valutazione degli Apprendimenti:</h3>
                         <p>La scuola ha sviluppato un <strong>curricolo verticale d'istituto</strong> basato sulle Competenze chiave europee. La valutazione, per tutti gli indirizzi, non si limita al profitto ma considera le competenze acquisite. Le programmazioni e le griglie di valutazione sono pubbliche e disponibili sul sito della scuola.</p>
@@ -437,12 +361,7 @@
                 <!-- Tab Grafici -->
                 <div id="tab_grafici" class="tab-content">
                     <article class="prose max-w-none prose-lg">
-                        <h2>
-                            <span>Dati e Statistiche della Scuola</span>
-                             <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                            </button>
-                        </h2>
+                        <h2>Dati e Statistiche della Scuola</h2>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             <div class="bg-white p-4 rounded-xl shadow-lg"><canvas id="docentiChart"></canvas></div>
                             <div class="bg-white p-4 rounded-xl shadow-lg"><canvas id="ataChart"></canvas></div>
@@ -455,12 +374,7 @@
                 <!-- Tab Contatti -->
                 <div id="tab_contatti" class="tab-content">
                     <article class="prose max-w-none prose-lg">
-                        <h2>
-                            <span>Contatti e Riferimenti</span>
-                            <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                            </button>
-                        </h2>
+                        <h2>Contatti e Riferimenti</h2>
                         <h3>Sede e Recapiti</h3>
                         <ul class="interactive-list">
                             <li><strong>Indirizzo:</strong> Via F. Ferrazzi, 15 - 20035 Villa Cortese (MI)</li>
@@ -476,12 +390,7 @@
                 <!-- Tab 6: Link Utili -->
                 <div id="tab6" class="tab-content">
                     <article class="prose max-w-none prose-lg">
-                        <h2>
-                           <span>Documenti e Link di Riferimento</span>
-                            <button class="copy-button" title="Copia testo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b4b8f" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-                           </button>
-                        </h2>
+                        <h2>Documenti e Link di Riferimento</h2>
                         <p>Qui puoi trovare i link diretti ai documenti ufficiali e alle sezioni più importanti del sito della scuola per ulteriori approfondimenti.</p>
                         <ul class="interactive-list">
                             <li><a href="https://agrariomendel.edu.it/servizi/203-ptof-piano-offerta-triennale-2025-2028" target="_blank" rel="noopener noreferrer">PTOF Completo (PDF)</a></li>
@@ -496,8 +405,6 @@
 
     </div>
     
-    <div id="copy-notification">Testo copiato!</div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const tabButtons = document.querySelectorAll('.tab-button');
@@ -521,36 +428,6 @@
                     }
                 });
             });
-
-            // Funzione per i pulsanti "Copia"
-            const copyButtons = document.querySelectorAll('.copy-button');
-            const notification = document.getElementById('copy-notification');
-            copyButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const article = button.closest('article');
-                    const textToCopy = article.innerText;
-                    
-                    // Utilizzo di un textarea temporaneo per la copia
-                    const textarea = document.createElement('textarea');
-                    textarea.value = textToCopy;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    try {
-                        document.execCommand('copy');
-                        showNotification();
-                    } catch (err) {
-                        console.error('Errore durante la copia:', err);
-                    }
-                    document.body.removeChild(textarea);
-                });
-            });
-
-            function showNotification() {
-                notification.classList.add('show');
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 2000);
-            }
 
             if (document.querySelector('.tab-button.active').dataset.tab === 'tab_grafici') {
                  renderAllCharts();
