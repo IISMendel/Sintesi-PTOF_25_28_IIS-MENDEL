@@ -58,15 +58,18 @@
              border-bottom: 1px solid rgba(0,0,0,0.1);
              padding: 0.5rem;
         }
-        nav {
-            display: flex;
+        /* Contenitore della navigazione che permette lo scroll */
+        .nav-wrapper {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            gap: 8px;
         }
-        nav::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
+        .nav-wrapper::-webkit-scrollbar {
+            display: none; /* Nasconde la scrollbar */
+        }
+        nav {
+            display: flex;
+            padding-bottom: 8px; /* Spazio per l'ombra dei bottoni */
+            gap: 8px;
         }
         
         .tab-button {
@@ -81,7 +84,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             cursor: pointer;
             white-space: nowrap;
-            flex-shrink: 0;
+            flex-shrink: 0; /* Impedisce ai bottoni di restringersi */
         }
         
         .tab-button:hover {
@@ -202,19 +205,21 @@
 
         <main class="rounded-2xl shadow-2xl overflow-hidden">
             <div class="tabs-container">
-                <nav aria-label="Tabs">
-                    <button class="tab-button active" data-tab="tab1">Scuola e Contesto</button>
-                    <button class="tab-button" data-tab="tab2">Scelte Strategiche</button>
-                    <button class="tab-button" data-tab="tab3">Offerta Formativa</button>
-                    <button class="tab-button" data-tab="tab_progetti">Progetti</button>
-                    <button class="tab-button" data-tab="tab_internazionalizzazione">Internazionalizzazione</button>
-                    <button class="tab-button" data-tab="tab_inclusione">Inclusione</button>
-                    <button class="tab-button" data-tab="tab4">Organizzazione</button>
-                    <button class="tab-button" data-tab="tab5">Valutazione</button>
-                    <button class="tab-button" data-tab="tab_grafici">Dati e Grafici</button>
-                    <button class="tab-button" data-tab="tab_contatti">Contatti</button>
-                    <button class="tab-button" data-tab="tab6">Link Utili</button>
-                </nav>
+                <div class="nav-wrapper">
+                    <nav aria-label="Tabs">
+                        <button class="tab-button active" data-tab="tab1">Scuola e Contesto</button>
+                        <button class="tab-button" data-tab="tab2">Scelte Strategiche</button>
+                        <button class="tab-button" data-tab="tab3">Offerta Formativa</button>
+                        <button class="tab-button" data-tab="tab_progetti">Progetti</button>
+                        <button class="tab-button" data-tab="tab_internazionalizzazione">Internazionalizzazione</button>
+                        <button class="tab-button" data-tab="tab_inclusione">Inclusione</button>
+                        <button class="tab-button" data-tab="tab4">Organizzazione</button>
+                        <button class="tab-button" data-tab="tab5">Valutazione</button>
+                        <button class="tab-button" data-tab="tab_grafici">Dati e Grafici</button>
+                        <button class="tab-button" data-tab="tab_contatti">Contatti</button>
+                        <button class="tab-button" data-tab="tab6">Link Utili</button>
+                    </nav>
+                </div>
             </div>
             
             <div class="p-6 sm:p-8">
