@@ -58,18 +58,15 @@
              border-bottom: 1px solid rgba(0,0,0,0.1);
              padding: 0.5rem;
         }
-        /* Contenitore della navigazione che permette lo scroll */
-        .nav-wrapper {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        .nav-wrapper::-webkit-scrollbar {
-            display: none; /* Nasconde la scrollbar */
-        }
         nav {
             display: flex;
-            padding-bottom: 8px; /* Spazio per l'ombra dei bottoni */
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
             gap: 8px;
+        }
+        nav::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
         }
         
         .tab-button {
@@ -84,7 +81,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             cursor: pointer;
             white-space: nowrap;
-            flex-shrink: 0; /* Impedisce ai bottoni di restringersi */
+            flex-shrink: 0;
         }
         
         .tab-button:hover {
@@ -192,7 +189,59 @@
         .prose a:hover { color: #764ba2; }
         .prose a:hover::after { width: 100%; }
 
-    </style>
+    
+        /* === PATCH: Navigazione orizzontale per le TAB (aggiunta non distruttiva) === */
+        .tabs-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            position: relative;
+        }
+        nav[aria-label="Tabs"] {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #c5c5c5 transparent;
+            -webkit-overflow-scrolling: touch;
+        }
+        .tabs-container::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            pointer-events: none;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.6));
+        }
+        nav[aria-label="Tabs"]::-webkit-scrollbar { height: 6px; }
+        nav[aria-label="Tabs"]::-webkit-scrollbar-thumb {
+            background-color: rgba(102,126,234,0.4);
+            border-radius: 10px;
+        }
+        /* === FINE PATCH === */
+
+        /* === FOOTER MENDEL === */
+        footer.mendel-footer {
+            background-color: rgba(0, 100, 0, 0.6);
+            color: white;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 1rem;
+            border-radius: 0 0 1rem 1rem;
+            margin-top: 2rem;
+        }
+        footer.mendel-footer a {
+            color: #fdfd96;
+            text-decoration: underline;
+        }
+        footer.mendel-footer a:hover {
+            color: #ffffff;
+        }
+        /* === FINE FOOTER === */
+
+</style>
 </head>
 <body class="antialiased text-gray-700">
 
@@ -205,21 +254,19 @@
 
         <main class="rounded-2xl shadow-2xl overflow-hidden">
             <div class="tabs-container">
-                <div class="nav-wrapper">
-                    <nav aria-label="Tabs">
-                        <button class="tab-button active" data-tab="tab1">Scuola e Contesto</button>
-                        <button class="tab-button" data-tab="tab2">Scelte Strategiche</button>
-                        <button class="tab-button" data-tab="tab3">Offerta Formativa</button>
-                        <button class="tab-button" data-tab="tab_progetti">Progetti</button>
-                        <button class="tab-button" data-tab="tab_internazionalizzazione">Internazionalizzazione</button>
-                        <button class="tab-button" data-tab="tab_inclusione">Inclusione</button>
-                        <button class="tab-button" data-tab="tab4">Organizzazione</button>
-                        <button class="tab-button" data-tab="tab5">Valutazione</button>
-                        <button class="tab-button" data-tab="tab_grafici">Dati e Grafici</button>
-                        <button class="tab-button" data-tab="tab_contatti">Contatti</button>
-                        <button class="tab-button" data-tab="tab6">Link Utili</button>
-                    </nav>
-                </div>
+                <nav aria-label="Tabs">
+                    <button class="tab-button active" data-tab="tab1">Scuola e Contesto</button>
+                    <button class="tab-button" data-tab="tab2">Scelte Strategiche</button>
+                    <button class="tab-button" data-tab="tab3">Offerta Formativa</button>
+                    <button class="tab-button" data-tab="tab_progetti">Progetti</button>
+                    <button class="tab-button" data-tab="tab_internazionalizzazione">Internazionalizzazione</button>
+                    <button class="tab-button" data-tab="tab_inclusione">Inclusione</button>
+                    <button class="tab-button" data-tab="tab4">Organizzazione</button>
+                    <button class="tab-button" data-tab="tab5">Valutazione</button>
+                    <button class="tab-button" data-tab="tab_grafici">Dati e Grafici</button>
+                    <button class="tab-button" data-tab="tab_contatti">Contatti</button>
+                    <button class="tab-button" data-tab="tab6">Link Utili</button>
+                </nav>
             </div>
             
             <div class="p-6 sm:p-8">
@@ -399,7 +446,7 @@
                         <p>Qui puoi trovare i link diretti ai documenti ufficiali e alle sezioni più importanti del sito della scuola per ulteriori approfondimenti.</p>
                         <ul class="interactive-list">
                             <li><a href="https://agrariomendel.edu.it/servizi/203-ptof-piano-offerta-triennale-2025-2028" target="_blank" rel="noopener noreferrer">PTOF Completo (PDF)</a></li>
-                            <li><a href="https://agrariomendel.edu.it/servizi/95-pi-piano-per-linclusione" target="_blank" rel="noopener noreferrer">Piano per l'Inclusione (PAI)</a></li>
+                            <li><a href="https://agrariomendel.edu.it/servizi/95-pi-piano-per-linclusione" target="_blank" rel="noopener noreferrer">Piano per l'Inclusione (P.I.)</a></li>
                             <li><a href="https://agrariomendel.edu.it/la-scuola/le-carte/21-regolamento-distituto" target="_blank" rel="noopener noreferrer">Regolamento d'Istituto</a></li>
                             <li><a href="http://www.agrariomendel.edu.it" target="_blank" rel="noopener noreferrer">Sito Web Ufficiale dell'IIS Mendel</a></li>
                         </ul>
@@ -507,6 +554,19 @@
             });
         }
     </script>
+
+
+<footer class="mendel-footer">
+  <p>Questa pagina è stata creata dall'<strong>IIS MENDEL – Villa Cortese (MI)</strong></p>
+  <p>
+    Il <strong>Piano per l’Inclusione (P.I.)</strong> è disponibile 
+    <a href="https://agrariomendel.edu.it/servizi/95-pi-piano-per-linclusione" target="_blank">qui</a> · 
+    Il <strong>PTOF completo</strong> è consultabile 
+    <a href="https://agrariomendel.edu.it/servizi/203-ptof-piano-offerta-triennale-2025-2028" target="_blank">qui</a> · 
+    Il <strong>Piano delle Attività</strong> è disponibile 
+    <a href="https://agrariomendel.edu.it/servizi/34-piano-delle-attivita-2526" target="_blank">qui</a>.
+  </p>
+</footer>
 
 </body>
 </html>
